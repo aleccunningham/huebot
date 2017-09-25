@@ -94,7 +94,7 @@ function postMessage(data) {
 
   options = {
     hostname: 'https://maker.ifttt.com',
-    path: `/trigger/${eventType}/with/key/defFRlgcG0s8F0w53vR_kF`,
+    path: '/trigger/' + eventType + '/with/key/defFRlgcG0s8F0w53vR_kF',
     method: 'POST'
   };
 

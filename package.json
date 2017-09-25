@@ -1,17 +1,16 @@
 {
   "name": "huebot",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A GroupMe bot that controls Philips Hue devices",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "director": "",
     "express": "^4.15.5"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "7.10.x"
   },
   "repository": {
     "type": "git",
