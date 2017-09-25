@@ -24,14 +24,13 @@ function postMessage() {
   botResponse = cool();
 
   options = {
-    hostname: 'api.groupme.com',
-    path: '/v3/bots/post',
+    hostname: 'maker.ifttt.com',
+    path: `/trigger/{event}/with/key/defFRlgcG0s8F0w53vR_kF`,
     method: 'POST'
   };
 
   body = {
-    "bot_id" : botID,
-    "text" : botResponse
+    "event" : hueCmd,sa
   };
 
   console.log('sending ' + botResponse + ' to ' + botID);

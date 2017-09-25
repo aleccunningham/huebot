@@ -1,0 +1,12 @@
+export const LIVING_ROOM_OFF = 1;
+export const LIVING_ROOM_ON = 2;
+export const LIVING_ROOM_DIM = 3;
+export const KITCHEN_ROOM_OFF = 4;
+export const KITCHEN_ROOM_ON = 5;
+export const KITCHEN_ROOM_DIM = 6;
+export const BEDROOM_ROOM_OFF = 7;
+export const BEDROOM_ROOM_ON = 8;
+export const BEDROOM_ROOM_DIM = 9;
+export const SUNROOM_ROOM_OFF = 10;
+export const SUNROOM_ROOM_ON = 11;
+export const SUNROOM_ROOM_DIM = 12;
