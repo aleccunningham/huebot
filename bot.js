@@ -4,7 +4,7 @@ var events = require('./constants');
 var botID = process.env.BOT_ID;
 
 function respond(req) {
-  var request = JSON.parse(req);
+  var request = JSON.parse(req.body);
   var data;
 
   switch(request) {
@@ -93,7 +93,7 @@ function postMessage(data) {
   eventType = data["eventType"];
 
   options = {
-    hostname: 'https://maker.ifttt.com',
+    hostname: 'maker.ifttt.com',
     path: '/trigger/' + eventType + '/with/key/defFRlgcG0s8F0w53vR_kF',
     method: 'POST'
   };
