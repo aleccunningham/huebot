@@ -9,75 +9,75 @@ function respond() {
   switch(request) {
     case events.LIVING_ROOM_ON:
       data = {
-        "event": "living_room_on",
+        eventType: "living_room_on",
       }
       break;
     case events.LIVING_ROOM_OFF:
       data = {
-        "event": "living_room_off",
+        eventType: "living_room_off",
       }
       break;
     case events.LIVING_ROOM_DIM:
       data = {
-        "event": "living_room_dim",
-        "Value1": dimValue
+        eventType: "living_room_dim",
+        Value1: dimValue
       }
       break;
     case events.LIVING_ROOM_MOVIE:
       data = {
-        "event": "living_room_movie",
+        eventType: "living_room_movie",
       }
     case events.SUNROOM_ROOM_ON:
       data = {
-        "event": "sunroom_room_on",
+        eventType: "sunroom_room_on",
       }
       break;
     case events.SUNROOM_ROOM_OFF:
       data = {
-        "event": "sunroom_room_off",
+        eventType: "sunroom_room_off",
       }
       break;
     case events.SUNROOM_ROOM_DIM:
       data = {
-        "event": "sunroom_room_dim",
-        "Value1": dimValue
+        eventType: "sunroom_room_dim",
+        Value1: dimValue
       }
       break;
     case events.KITCHEN_ROOM_ON:
       data = {
-        "event": "kitchen_room_on",
+        eventType: "kitchen_room_on",
       }
       break;
     case events.KITCHEN_ROOM_OFF:
       data = {
-        "event": "kitchen_room_off",
+        eventType: "kitchen_room_off",
       }
       break;
     case events.KITCHEN_ROOM_DIM:
       data = {
-        "event": "kitchen_room_dim",
-        "Value1": dimValue
+        eventType: "kitchen_room_dim",
+        Value1: dimValue
       }
       break;
     case events.BEDROOM_ROOM_ON:
       data = {
-        "event": "bedroom_room_on",
+        eventType: "bedroom_room_on",
       }
       break;
     case events.BEDROOM_ROOM_OFF:
       data = {
-        "event": "bedroom_room_off",
+        eventType: "bedroom_room_off",
       }
       break;
     case events.BEDROOM_ROOM_DIM:
       data = {
-        "event": "bedroom_room_dim",
-        "Value1": dimValue
+        eventType: "bedroom_room_dim",
+        Value1: dimValue
       }
       break;
     default:
       data = {
-        "event": "error",
+        eventType: "error",
       }
   }
 
@@ -87,8 +87,10 @@ function respond() {
 }
 
 function postMessage(data) {
-  var botResponse, options, body, botReq, groupme, groupme_body, eventType;
-  eventType = data["event"]
+  var eventType, options, body, botReq, groupme, groupme_body;
+
+  eventType = data["eventType"];
+
   options = {
     hostname: 'https://maker.ifttt.com',
     path: `/trigger/${eventType}/with/key/defFRlgcG0s8F0w53vR_kF`,
@@ -96,8 +98,8 @@ function postMessage(data) {
   };
 
   body = {
-    "event": data["event"],
-    "Value1": data["Value1"],
+    "eventType": data["eventType"],
+    //"Value1": data["Value1"],
   };
 
   groupme = {
@@ -108,8 +110,8 @@ function postMessage(data) {
 
   groupme_body = {
     "bot_id": botID,
-    "text": data["event"]
-  }
+    "text": data["eventType"]
+  };
 
   console.log('sending ' + eventType + ' to ' + botID);
 
