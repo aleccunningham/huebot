@@ -13,22 +13,6 @@ You'll need a to create a GroupMe bot, which can be accessed @ [GroupMe Develope
 
 Make sure to edit `.env` and replace the BOT_ID field to reflect the bot token you retrieved. After that, you should be up and running!
 
-## IFTT
-
-huebot takes advantage of the awesome project, [IFTT](). It allows us to make webhooks that have native integration with Philips Hue. In order to get the bot to actually access hue, you'll need an applet (an IFTT object) for each event. For the "This" part of the command, search for Webhooks.
-
-[Imgur](https://i.imgur.com/7VsYcIZ.png)
-
-In the event name, enter the huebot trigger command as such
-
-[Imgur](https://i.imgur.com/yeDm0SZ.png)
-
-And the "That" command will be a Philips Hue applet. Just as when you searched for the webhook, search for Philips Hue. A full list of available applets can be found [here]()
-
-In order to dim hue lights, we have to alwso provide a second value that holds the percentage stored as an integer. We can achieve that by selecting Add ingredient, which lets us pass the webhook payload data through as the brightness.
-
-[Imgur](https://i.imgur.com/DfeDhpD.png)
-
 ### Commands
 ```
 /livingroom on
@@ -39,3 +23,17 @@ In order to dim hue lights, we have to alwso provide a second value that holds t
 /sunroom
 /kitchen
 ```
+
+## IFTT
+
+huebot takes advantage of the awesome project, [IFTT](). It allows us to make webhooks that have native integration with Philips Hue. In order to get the bot to actually access hue, you'll need an applet (an IFTT object) for each event. For the "This" part of the command, search for Webhooks.
+
+In the event name, enter the huebot trigger command as such
+
+![Imgur](https://i.imgur.com/yeDm0SZ.png)
+
+And the "That" command will be a Philips Hue applet. Just as when you searched for the webhook, search for Philips Hue. A full list of available applets can be found [here]()
+
+In order to dim hue lights, we have to alwso provide a second value that holds the percentage stored as an integer. We can achieve that by selecting Add ingredient, which lets us pass the webhook payload data through as the brightness.
+
+![Imgur](https://i.imgur.com/DfeDhpD.png)
