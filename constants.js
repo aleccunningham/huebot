@@ -1,12 +1,15 @@
-export const LIVING_ROOM_OFF = 1;
-export const LIVING_ROOM_ON = 2;
-export const LIVING_ROOM_DIM = 3;
-export const KITCHEN_ROOM_OFF = 4;
-export const KITCHEN_ROOM_ON = 5;
-export const KITCHEN_ROOM_DIM = 6;
-export const BEDROOM_ROOM_OFF = 7;
-export const BEDROOM_ROOM_ON = 8;
-export const BEDROOM_ROOM_DIM = 9;
-export const SUNROOM_ROOM_OFF = 10;
-export const SUNROOM_ROOM_ON = 11;
-export const SUNROOM_ROOM_DIM = 12;
+ module.exports = Object.freeze({
+    LIVING_ROOM_OFF: '/livingroom_off';
+    LIVING_ROOM_ON: '/livingroom_on';
+    LIVING_ROOM_DIM: '/livingroom_dim';
+    LIVING_ROOM_MOVIE: '/livingroom_movie';
+    KITCHEN_ROOM_OFF: '/kitchen_room_off';
+    KITCHEN_ROOM_ON: '/kitchen_room_on';
+    KITCHEN_ROOM_DIM: '/kitchen_room_dim';
+    BEDROOM_ROOM_OFF: '/bedroom_off';
+    BEDROOM_ROOM_ON: '/bedroom_on';
+    BEDROOM_ROOM_DIM: '/bedroom_dim';
+    SUNROOM_ROOM_OFF: '/sunroom_off';
+    SUNROOM_ROOM_ON: '/sunroom_on';
+    SUNROOM_ROOM_DIM: '/sunroom_dim';
+});
