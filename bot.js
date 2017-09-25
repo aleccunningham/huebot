@@ -4,7 +4,7 @@ var events = require('./constants');
 var botID = process.env.BOT_ID;
 
 function respond() {
-  var request = JSON.parse(this.req.chunks[0])
+  var request = JSON.parse(this.req.chunks[0]);
 
   switch(request) {
     case events.LIVING_ROOM_ON:
@@ -93,11 +93,11 @@ function respond() {
 }
 
 function postMessage(data) {
-  var botResponse, options, body, botReq;
-
+  var botResponse, options, body, botReq, groupme, groupme_body, eventType;
+  eventType = data["event"]
   options = {
     hostname: 'maker.ifttt.com',
-    path: `/trigger/${event}/with/key/defFRlgcG0s8F0w53vR_kF`,
+    path: `/trigger/${eventType}/with/key/defFRlgcG0s8F0w53vR_kF`,
     method: 'POST'
   };
 
