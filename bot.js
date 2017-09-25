@@ -81,22 +81,16 @@ function respond() {
       }
   }
 
-  if(request.text && botRegex.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage(data);
-    this.res.end();
-  } else {
-    console.log("don't care");
-    this.res.writeHead(200);
-    this.res.end();
-  }
+  this.res.writeHead(200);
+  postMessage(data);
+  this.res.end();
 }
 
 function postMessage(data) {
   var botResponse, options, body, botReq, groupme, groupme_body, eventType;
   eventType = data["event"]
   options = {
-    hostname: 'maker.ifttt.com',
+    hostname: 'https://maker.ifttt.com',
     path: `/trigger/${eventType}/with/key/defFRlgcG0s8F0w53vR_kF`,
     method: 'POST'
   };
