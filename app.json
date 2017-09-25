@@ -1,0 +1,6 @@
+{
+  "name": "huebot",
+  "description": "GroupMe bot that controls Philip Hue devices",
+  "repository": "https://github.com/aleccunningham/huebot",
+  "keywords": []
+}
