@@ -3,8 +3,9 @@ var events = require('./constants');
 
 var botID = process.env.BOT_ID;
 
-function respond() {
-  var request = JSON.parse(this.req.chunks[0]);
+function respond(req) {
+  var request = JSON.parse(req);
+  var data;
 
   switch(request) {
     case events.LIVING_ROOM_ON:
