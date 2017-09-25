@@ -15,9 +15,9 @@ Make sure to edit `.env` and replace the BOT_ID field to reflect the bot token y
 
 ### Commands
 ```
-/livingroom on
-/livingroom off
-/livingroom dim <%>
+/livingroom_on
+/livingroom_off
+/livingroom_dim <%>
 ...following rooms have identical commands
 /bedroom
 /sunroom
