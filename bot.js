@@ -81,9 +81,7 @@ function respond(request) {
       }
   }
 
-  this.res.writeHead(200);
   postMessage(data);
-  this.res.end();
 }
 
 function postMessage(data) {
