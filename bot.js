@@ -112,7 +112,7 @@ function postMessage(data) {
   console.log('sending ' + data.eventType + ' to ' + botID);
 
   botReq = HTTPS.request(options, function(res) {
-      if(res.statusCode == 200) {
+      if(res.statusCode == 202) {
         //neat
       } else {
         console.log('rejecting bad status code ' + res.statusCode);
@@ -128,7 +128,7 @@ function postMessage(data) {
   botReq.end(JSON.stringify(body));
 
   groupmeReq = HTTPS.request(groupme, function(res) {
-      if(res.statusCode == 200 or res.statusCode == 202) {
+      if(res.statusCode == 202) {
         //neat
       } else {
         console.log('rejecting bad status code ' + res.statusCode);
