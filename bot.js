@@ -99,6 +99,17 @@ function postMessage(data) {
     //"Value1": data["Value1"],
   };
 
+  groupme = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+
+  groupme_body = {
+    "bot_id": botID,
+    "text": data.eventType
+  };
+
   console.log('sending ' + data.eventType + ' to ' + botID);
 
   botReq = HTTPS.request(options, function(res) {
@@ -116,6 +127,23 @@ function postMessage(data) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
   botReq.end(JSON.stringify(body));
+
+  groupmeReq = HTTPS.request(options, function(res) {
+      if(res.statusCode == 202 || res.statusCode == 200) {
+        //neat
+      } else {
+        console.log('rejecting bad status code ' + res.statusCode);
+      }
+  });
+
+  groupmeReq.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+  });
+  groupmeReq.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+  groupmeReq.end(JSON.stringify(groupme_body));
+
 }
 
 
