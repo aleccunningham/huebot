@@ -112,7 +112,7 @@ function postMessage(data) {
   console.log('sending ' + data.eventType + ' to ' + botID);
 
   botReq = HTTPS.request(options, function(res) {
-      if(res.statusCode == 202) {
+      if(res.statusCode == 200) {
         //neat
       } else {
         console.log('rejecting bad status code ' + res.statusCode);
