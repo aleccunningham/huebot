@@ -1,12 +1,15 @@
 var bot = require('./bot.js');
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
+
+var jsonParser = bodyParser.json()
 
 app.get('/', function (req, res) {
   res.send("Control the lights with /<room>_<event>")
 });
 
-app.post('/', function (req, res) {
+app.post('/', jsonParser, function (req, res) {
   bot.respond(req)
 });
 
