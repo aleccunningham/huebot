@@ -88,18 +88,16 @@ function respond(req) {
 }
 
 function postMessage(data) {
-  var eventType, options, body, botReq, groupme, groupme_body;
-
-  eventType = data["eventType"];
+  var options, body, botReq, groupme, groupme_body;
 
   options = {
     hostname: 'maker.ifttt.com',
-    path: '/trigger/' + eventType + '/with/key/defFRlgcG0s8F0w53vR_kF',
+    path: '/trigger/' + data.eventType + '/with/key/defFRlgcG0s8F0w53vR_kF',
     method: 'POST'
   };
 
   body = {
-    "eventType": data["eventType"],
+    "eventType": data.eventType,
     //"Value1": data["Value1"],
   };
 
