@@ -128,7 +128,7 @@ function postMessage(data) {
   botReq.end(JSON.stringify(body));
 
   groupmeReq = HTTPS.request(groupme, function(res) {
-      if(res.statusCode == 202) {
+      if(res.statusCode == 200) {
         //neat
       } else {
         console.log('rejecting bad status code ' + res.statusCode);
