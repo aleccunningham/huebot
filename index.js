@@ -7,7 +7,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
-  bot.respond(req);
+  bot.respond(req)
 });
 
 app.listen(process.env.PORT || 5000, function() {
