@@ -106,10 +106,10 @@ function postMessage(data) {
 
   groupme_body = {
     "bot_id": botID,
-    "text": data["eventType"]
+    "text": data.eventType
   };
 
-  console.log('sending ' + eventType + ' to ' + botID);
+  console.log('sending ' + data.eventType + ' to ' + botID);
 
   botReq = HTTPS.request(options, function(res) {
       if(res.statusCode == 202) {
