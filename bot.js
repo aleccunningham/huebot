@@ -3,8 +3,7 @@ var events = require('./constants');
 
 var botID = process.env.BOT_ID;
 
-function respond(req) {
-  var request = req.body.text;
+function respond(request) {
   var data;
 
   switch(request) {

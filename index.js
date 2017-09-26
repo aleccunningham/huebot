@@ -3,14 +3,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-var jsonParser = bodyParser.json()
+app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
   res.send("Control the lights with /<room>_<event>")
 });
 
-app.post('/', jsonParser, function (req, res) {
-  bot.respond(req)
+app.post('/', function (req, res) {
+  bot.respond(req.body.text)
 });
 
 app.listen(process.env.PORT || 5000, function() {
