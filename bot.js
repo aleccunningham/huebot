@@ -4,7 +4,7 @@ var events = require('./constants');
 var botID = process.env.BOT_ID;
 
 function respond(request) {
-  var data;
+  var data, eventType, Value1;
 
   switch(request) {
     case events.LIVING_ROOM_ON:
