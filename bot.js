@@ -4,7 +4,8 @@ var events = require('./constants');
 var botID = process.env.BOT_ID;
 
 function respond(req) {
-  var request = JSON.parse(req.body);
+  var obj = JSON.parse(req.body);
+  var request = obj.text
   var data;
 
   switch(request) {
