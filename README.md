@@ -24,20 +24,27 @@ Make sure to edit `.env` and replace the BOT_ID field to reflect the bot token y
 /kitchen
 ```
 
-## IFTT
+## IFTTT
 
-huebot takes advantage of the awesome project, [IFTT](https://ifttt.com/). It allows us to make webhooks that have native integration with Philips Hue. In order to get the bot to actually access hue, you'll need an applet (an IFTT object) for each event. For the "This" part of the command, search for Webhooks.
+huebot takes advantage of the awesome project, [IFTTT](https://ifttt.com/). It allows us to make webhooks that have native integration with Philips Hue. In order to get the bot to actually access hue, you'll need an applet (an IFTT object) for each event. For the "This" part of the command, search for Webhooks.
 
 In the event name, enter the huebot trigger command as such
 
 ![Imgur](https://i.imgur.com/yeDm0SZ.png)
 
-And the "That" command will be a Philips Hue applet. Just as when you searched for the webhook, search for Philips Hue. A full list of available applets can be found [here]()
+And the "That" command will be a Philips Hue applet. Just as when you searched for the webhook, search for Philips Hue. A full list of available applets can be found [here](https://ifttt.com/create/if-receive-a-web-request-then-hue?sid=5)
 
 In order to dim hue lights, we have to alwso provide a second value that holds the percentage stored as an integer. We can achieve that by selecting Add ingredient, which lets us pass the webhook payload data through as the brightness.
 
 ![Imgur](https://i.imgur.com/DfeDhpD.png)
 
-Here is a view on IFTT of all the webhook applets I created:
+Here is a view on IFTTT of all the webhook applets I created:
 
 ![Imgur](https://i.imgur.com/7KEdKjo.png)
+
+## Todo
+
+- [ ] Refactor to use ES6 promises
+- [ ] Allow for dimming of lights
+- [ ] Change hue bulbs color based on image
+- [ ] Get feedback on lights On/Off state
