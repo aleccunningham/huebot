@@ -109,7 +109,7 @@ function postMessage(data) {
 
   groupme_body = {
     "bot_id": botID,
-    "dimValue": data.eventType
+    "text": "Got it, boss"
   };
 
   console.log('sending ' + data.eventType + ' to ' + botID);
