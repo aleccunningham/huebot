@@ -5,7 +5,9 @@ var botID = process.env.BOT_ID;
 var key = process.env.HUE_KEY;
 
 function respond(request) {
-  var data, eventType, Value1;
+  var data, eventType,
+      str=request.text,
+      dimValue=str.slice(-3);
 
   switch(request.text) {
     case events.LIVING_ROOM_ON:
@@ -21,7 +23,7 @@ function respond(request) {
     case events.LIVING_ROOM_DIM:
       data = {
         eventType: "living_room_dim",
-        Value1: request.dimValue
+        Value1: dimValue
       }
       break;
     case events.LIVING_ROOM_MOVIE:
@@ -41,7 +43,7 @@ function respond(request) {
     case events.SUNROOM_ROOM_DIM:
       data = {
         eventType: "sunroom_room_dim",
-        Value1: request.Value1
+        Value1: dimValue
       }
       break;
     case events.KITCHEN_ROOM_ON:
@@ -57,7 +59,7 @@ function respond(request) {
     case events.KITCHEN_ROOM_DIM:
       data = {
         eventType: "kitchen_room_dim",
-        Value1: request.Value1
+        Value1: dimValue
       }
       break;
     case events.BEDROOM_ROOM_ON:
@@ -73,7 +75,7 @@ function respond(request) {
     case events.BEDROOM_ROOM_DIM:
       data = {
         eventType: "bedroom_room_dim",
-        Value1: request.Value1
+        Value1: dimValue
       }
       break;
     default:
