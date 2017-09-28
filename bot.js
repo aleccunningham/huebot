@@ -7,7 +7,7 @@ var key = process.env.HUE_KEY;
 function respond(request) {
   var data, eventType, Value1;
 
-  switch(request) {
+  switch(request.text) {
     case events.LIVING_ROOM_ON:
       data = {
         eventType: "living_room_on",
@@ -21,7 +21,7 @@ function respond(request) {
     case events.LIVING_ROOM_DIM:
       data = {
         eventType: "living_room_dim",
-        Value1: dimValue
+        Value1: request.dimValue
       }
       break;
     case events.LIVING_ROOM_MOVIE:
@@ -41,7 +41,7 @@ function respond(request) {
     case events.SUNROOM_ROOM_DIM:
       data = {
         eventType: "sunroom_room_dim",
-        Value1: dimValue
+        Value1: request.Value1
       }
       break;
     case events.KITCHEN_ROOM_ON:
@@ -57,7 +57,7 @@ function respond(request) {
     case events.KITCHEN_ROOM_DIM:
       data = {
         eventType: "kitchen_room_dim",
-        Value1: dimValue
+        Value1: request.Value1
       }
       break;
     case events.BEDROOM_ROOM_ON:
@@ -73,7 +73,7 @@ function respond(request) {
     case events.BEDROOM_ROOM_DIM:
       data = {
         eventType: "bedroom_room_dim",
-        Value1: dimValue
+        Value1: request.Value1
       }
       break;
     default:
@@ -96,7 +96,7 @@ function postMessage(data) {
 
   body = {
     "eventType": data.eventType,
-    //"Value1": data["Value1"],
+    "Value1": data.Value1,
   };
 
   groupme = {
@@ -107,7 +107,7 @@ function postMessage(data) {
 
   groupme_body = {
     "bot_id": botID,
-    "text": data.eventType
+    "dimValue": data.eventType
   };
 
   console.log('sending ' + data.eventType + ' to ' + botID);
