@@ -88,7 +88,7 @@ function respond(request) {
 }
 
 function postMessage(data) {
-  var options, body, botReq, groupme, groupme_body;
+  var options, body, groupme, groupme_body;
 
   options = {
     hostname: 'maker.ifttt.com',
@@ -115,26 +115,26 @@ function postMessage(data) {
   console.log('sending ' + data.eventType + ' to ' + botID);
 
   botReq = HTTPS.request(options, function(res) {
-      if(res.statusCode == 202 || res.statusCode == 200) {
+      if(res.statusCode == 202) {
         //neat
       } else {
-        console.log('rejecting bad status code ' + res.statusCode);
+        console.log('hue rejecting bad status code ' + res.statusCode);
       }
   });
 
   botReq.on('error', function(err) {
-    console.log('error posting message '  + JSON.stringify(err));
+    console.log('error triggering hook '  + JSON.stringify(err));
   });
   botReq.on('timeout', function(err) {
-    console.log('timeout posting message '  + JSON.stringify(err));
+    console.log('timeout triggering hook '  + JSON.stringify(err));
   });
   botReq.end(JSON.stringify(body));
 
   groupmeReq = HTTPS.request(groupme, function(res) {
-      if(res.statusCode == 202 || res.statusCode == 200) {
+      if(res.statusCode == 202) {
         //neat
       } else {
-        console.log('rejecting bad status code ' + res.statusCode);
+        console.log('groupme rejecting bad status code ' + res.statusCode);
       }
   });
 
